@@ -67,7 +67,7 @@ export default function Iphone({ products }) {
   );
 }
 
-export async function getServerSideProps() {
+async function getServerSideProps() {
   await mongooseConnect();
   const products = await Product.find({}).populate("category");
   return {
