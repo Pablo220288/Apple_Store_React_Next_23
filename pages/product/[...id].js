@@ -28,7 +28,7 @@ const Price = styled.span`
   font-size: 1.5rem;
 `;
 
-export default function ProductPage({ product }) {
+const ProductPage = ({ product }) => {
   const { addProduct } = useContext(CartContext);
 
   return (
@@ -60,7 +60,9 @@ export default function ProductPage({ product }) {
   );
 }
 
-async function getServerSideProps(context) {
+export default ProductPage
+
+export async function getServerSideProps(context) {
   await mongooseConnect();
   const { id } = context.query;
   const product = await Product.findById(id[0]);

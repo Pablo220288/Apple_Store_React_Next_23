@@ -7,15 +7,16 @@ import Header from "@/components/Header";
 import NewProduct from "@/components/NewProduct";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const StyledIndex = styled.div`
   position: relative;
 `;
 
-export default function HomePage({ featuredProduct, newProducts }) {
+export default function HomePage({featuredProduct, newProducts}) {
   const { favoriteProducts } = useContext(FavoriteContext);
+
   return (
     <StyledIndex>
       <Header />
@@ -32,7 +33,7 @@ export default function HomePage({ featuredProduct, newProducts }) {
   );
 }
 
-export async function getServerSideProps() {
+ export async function getServerSideProps() {
   await mongooseConnect();
 
   // Featured Product
@@ -51,4 +52,4 @@ export async function getServerSideProps() {
       newProducts: JSON.parse(JSON.stringify(newProducts)),
     },
   };
-}
+} 

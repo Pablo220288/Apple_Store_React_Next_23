@@ -57,25 +57,25 @@ export default function Categories() {
           className="box one"
           datatext="Iphone"
           dataimg={"/assets/iphones.png"}
-          href={"/iphone"}
+          href={"/categories/iphone"}
         ></StyledBox>
         <StyledBox
           className="box two"
           datatext="Macbook"
           dataimg={"/assets/macbooks.png"}
-          href={"/macbook"}
+          href={"/categories/macbook"}
         ></StyledBox>
         <StyledBox
           className="box three"
           datatext="Apple Watch"
           dataimg={"/assets/applewatch.png"}
-          href={"/applewatch"}
+          href={"/categories/applewatch"}
         ></StyledBox>
         <StyledBox
           className="box four"
           datatext="AirPods"
           dataimg={"/assets/airpods.png"}
-          href={"/airpods"}
+          href={"/categories/airpods"}
         ></StyledBox>
       </StyledBoxes>
     </Center>
